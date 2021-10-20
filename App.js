@@ -4,7 +4,7 @@ import Search from "./components/Search";
 import styles from "./components/List.module.css";
 import StateForSearch from "./components/StateForSearch"; 
 
-const stories = [
+const initStories = [
     {
         title:'React',
         url:'https://reactjs.org/',
