@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-const usePersistenceState = () => {
-	const [searchTerm, setSearchTerm] = useState(
-		localStorage.getItem("searchTerm")
+const usePersistenceState = (key, initValue) => {
+	const [persistenceKey, setPersistenceKey] = useState(
+		localStorage.getItem(key) || initValue
 	);
 	useEffect(() => {
-		localStorage.setItem("searchTerm", searchTerm);
-	}, [searchTerm]);
+		localStorage.setItem(key, persistenceKey);
+	}, [persistenceKey]);
+
+	return [persistenceKey, setPersistenceValue]
 
 }
 export default usePersistenceState;
